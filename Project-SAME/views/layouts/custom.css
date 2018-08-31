@@ -23,13 +23,13 @@ html {
     bottom: 0;
     padding: 30px;
     margin: auto;
-    width: 100px;
-    height: 100px;
+    width: 400px;
+    height: 200px;
     border-radius: 50%;
-    background: rgba(3,3,3,.8);
+    background: #ffffff(3,3,3,.8);
     overflow: hidden;
-    opacity: 0.4;
-    box-shadow: 10px 10px 30px #000;}
+    opacity: 0.6;
+  }
   
   /* Login container */
   #container{
@@ -103,7 +103,7 @@ html {
   
   input:focus{
     outline: none;
-    box-shadow: 3px 3px 10px #333;
+    box-shadow: 6px 6px 10px 6px #333;
     background: rgba(3,3,3,.18);
   }
   
@@ -176,7 +176,7 @@ html {
   
   #forgotten{
     position: absolute;
-    font-size: 12px;
+    font-size: 13px;
     font-family: 'Hind', sans-serif;
     color: rgba(255,255,255,.2);
     right: 0px;

@@ -16,3 +16,4 @@ $('#register-form-link').click(function(e) {
 });
 
 });
+
