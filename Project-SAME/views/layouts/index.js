@@ -14,6 +14,5 @@ $('#register-form-link').click(function(e) {
   $(this).addClass('active');
   e.preventDefault();
 });
-
 });
 
