@@ -22,3 +22,18 @@ module.exports = function(app) {
     });
   });
 };
+
+
+// Create a new user
+app.post("/api/users", function(req, res) {
+  db.User.create(req.body).then(function(data) {
+    res.json(data);
+  });
+});
+
+ // Delete a user by id
+ app.delete("/api/users/:id", function(req, res) {
+  db.User.destroy({ where: { id: req.params.id } }).then(function(data) {
+    res.json(data);
+  });
+});
