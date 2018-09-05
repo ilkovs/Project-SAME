@@ -51,3 +51,4 @@ module.exports = function(sequelize, DataTypes) {
     return DailyWorkout;
   };
   
+  //randomcomment
