@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Do Lift</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+        crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="../layouts/custom2.css">
+
+</head>
+
+<body>
+
+    <input type="checkbox" name="mobile-nav" id="mobile-nav" class="gaadiexp-check" onchange="this.blur()">
+    <label for="mobile-nav" class="gaadiexp white" tabindex="0"><span></span></label>
+    <nav role="navigation" class="header-nav">
+        <div class="fixed-nav">
+            <a class="navbar-brand" style="margin-left:40px" href="#"></a>
+            <div class="menu">
+                <ul>
+                    <li class="page_item page-item-2">
+                        <a href="profile.html" class="list-group-item ">My Plan</a> <!-- View Plan -->
+                    </li>
+                    <li class="page_item page-item-2">
+                        <a href="wishlist.html" class="list-group-item">Workouts</a>
+                    </li>
+                    <li class="page_item page-item-2">
+                        <a href="interest.html" class="list-group-item">Nutrition</a>
+                    </li>
+                    <li class="page_item page-item-2">
+                        <a href="bids.html" class="list-group-item">Supplements</a>
+                    </li>
+                    <li class="page_item page-item-2">
+                        <a href="liftings.html" class="list-group-item">Motivation</a>
+                    </li>
+                    <li class="page_item page-item-2">
+                        <a href="documents.html" class="list-group-item">Video Library</a>
+                    </li>
+                    <li class="page_item page-item-2">
+                        <a href="bid-history.html" class="list-group-item">Articles</a>
+                    </li>
+                    <li class="page_item page-item-2">
+                        <a href="payments.html" class="list-group-item">Log Out</a>
+                    </li>
+                </ul>
+                <form class="example" action="/action_page.php">
+                    <input type="text" placeholder="Search.." name="search">
+                    <button type="submit"><i class="fa fa-search"></i></button>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+
+    <div class="container">
+        <br />
+        <div class="row">
+
+            <div class="dual-list list-left col-md-5">
+                <div class="well text-right">
+                    <div class="row">
+                        <div class="col-md-10">
+                            <div class="input-group">
+                                <span class="input-group-addon glyphicon glyphicon-search"></span>
+                                <input type="text" name="SearchDualList" class="form-control" placeholder="search" />
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="btn-group">
+                                <a class="btn btn-default selector" title="select all"><i class="glyphicon glyphicon-unchecked"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <ul class="list-group">
+                        <li class="list-group-item">Muscle 1</li>
+                        <li class="list-group-item">Muscle 2</li>
+                        <li class="list-group-item">Muscle 3</li>
+                        <li class="list-group-item">Muscle 4</li>
+                        <li class="list-group-item">Muscle 5</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="list-arrows col-md-1 text-center">
+                <button class="btn btn-default btn-sm move-left">
+                    <span class="glyphicon glyphicon-chevron-left"></span>
+                </button>
+
+                <button class="btn btn-default btn-sm move-right">
+                    <span class="glyphicon glyphicon-chevron-right"></span>
+                </button>
+            </div>
+
+            <div class="dual-list list-right col-md-5">
+                <div class="well">
+                    <div class="row">
+                        <div class="col-md-2">
+                            <div class="btn-group">
+                                <a class="btn btn-default selector" title="select all"><i class="glyphicon glyphicon-unchecked"></i></a>
+                            </div>
+                        </div>
+                        <div class="col-md-10">
+                            <div class="input-group">
+                                <input type="text" name="SearchDualList" class="form-control" placeholder="search" />
+                                <span class="input-group-addon glyphicon glyphicon-search"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <ul class="list-group">
+                        <li class="list-group-item">Exercise 1</li>
+                        <li class="list-group-item">Exercise 2</li>
+                        <li class="list-group-item">Exercise 3</li>
+                        <li class="list-group-item">Exercise 4</li>
+                        <li class="list-group-item">Exercise 5</li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <ul class="social-icon animate pull-right">
+                <li><a href="#" title="facebook" target="_blank"><i class="fa fa-facebook"></i></a></li>
+                <li><a href="#" title="twitter" target="_blank"><i class="fa fa-twitter"></i></a></li>
+                <li><a href="#" title="instagram" target="_blank"><i class="fa fa-instagram"></i></a></li>
+            </ul>
+        </div>
+    </footer>
+
+    <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="http://code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="../layouts/index2.js"></script>
+
+    
+</body>
+
+</html>
