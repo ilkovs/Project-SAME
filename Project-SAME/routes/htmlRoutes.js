@@ -19,6 +19,7 @@ module.exports = function(app) {
     res.render('directory', { user })});
     // console.log("thes are the plans", plan);
   });
+
     // res.render("directory");
   // });
 
@@ -38,3 +39,4 @@ module.exports = function(app) {
   //   res.render("404");
   // });
 };
+
