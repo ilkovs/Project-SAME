@@ -12,8 +12,15 @@ module.exports = function(app) {
   });
 
   app.get("/directory", function(req, res) {
-    res.render("directory");
+    db.User.findOne({where: {
+      id: 1
+    }}).then(function(user) {
+    // db.Plan.findAll().then((plan) => {
+    res.render('directory', { user })});
+    // console.log("thes are the plans", plan);
   });
+    // res.render("directory");
+  // });
 
   
 
