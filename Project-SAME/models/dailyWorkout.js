@@ -3,7 +3,9 @@ module.exports = function(sequelize, DataTypes) {
       id: {
         autoIncrement: true,
         primaryKey: true,
-        type: Sequelize.INTEGER
+
+        type: DataTypes.INTEGER
+
       },
       weekday: {
         type: DataTypes.INTEGER,
@@ -35,8 +37,10 @@ module.exports = function(sequelize, DataTypes) {
     });
   
     DailyWorkout.associate = function(models) {
-      // We're saying that a DailyWorkout should belong to an Author
-      // A DailyWorkout can't be created without an Author due to the foreign key constraint
+
+      // We're saying that a DailyWorkout should belong to a Plan
+      // A DailyWorkout can't be created without an Plan due to the foreign key constraint
+
       DailyWorkout.belongsTo(models.Plan, {
         foreignKey: {
           allowNull: false
@@ -50,5 +54,4 @@ module.exports = function(sequelize, DataTypes) {
   
     return DailyWorkout;
   };
-  
-  //randomcomment
+
