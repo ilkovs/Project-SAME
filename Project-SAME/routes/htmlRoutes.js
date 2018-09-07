@@ -20,6 +20,10 @@ module.exports = function(app) {
     // console.log("thes are the plans", plan);
   });
 
+  app.get("/makeplan", function(req, res) {
+    res.render('makeplan');
+  });
+
     // res.render("directory");
   // });
 
