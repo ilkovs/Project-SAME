@@ -1,0 +1,14 @@
+<h1>Directory</h1>
+<h2>Welcome, {{user.firstname}}</h2>
+<div class="row">
+
+  <div class="col col-lg-1"></div>
+  <div class="col col-lg-4">
+    <a href="/makeplan" class="button">Create Plan</a>
+    <ul>
+      {{#each plan}} 
+        <h1>{{this.title}}</h1>
+      {{/each}}
+    </ul>
+  </div>
+</div>
