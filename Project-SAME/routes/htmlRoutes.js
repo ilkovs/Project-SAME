@@ -28,7 +28,7 @@ module.exports = function (app) {
   app.get("/directory", function (req, res) {
     db.User.findOne({
       where: {
-        id: 1
+        id: req.user.id
       }
     }).then(function (user) {
       // db.Plan.findAll().then((plan) => {
@@ -38,6 +38,18 @@ module.exports = function (app) {
     // console.log("thes are the plans", plan);
   });
 
+  app.get("/viewPlan/", function(req, res) {
+    db.Plan.findOne({where: {
+      id: 5
+    }, include: [db.DailyWorkout]
+  }).then(function(plan) {
+    console.log(plan);
+    // db.Plan.findAll().then((plan) => {
+    res.render('viewPlan', { plan })});
+    // console.log("thes are the plans", plan);
+  });
+  
+ 
   app.get("/makeplan", function (req, res) {
     db.Muscle.findAll().then(function (muscles, weekday) {
       // db.Plan.findAll().then((plan) => {

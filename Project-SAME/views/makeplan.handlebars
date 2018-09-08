@@ -28,8 +28,8 @@
         <div class="control-group">
             {{label_validation 'name' 'Plan name:' errors class="control-label"}}
             <div class="controls">
-                {{input_validation 'title' plan.title errors}}
-                {{#field_errors 'title' errors}}
+                {{input_validation 'planname' plan.title errors}}
+                {{#field_errors 'planname' errors}}
                 <span class="help-block text-error">{{this}}</span>
                 {{/field_errors}}
             </div>
@@ -64,7 +64,9 @@
                 {{field_errors 'muscle' errors class="help-block text-error"}}
             </div>
         </div>
-          <button type="submit">Create Plan</button>
+
+        <a href="/viewPlan">View Plan</a>
+
 
         {{!-- <div class="control-group">
             {{label_validation 'muscles' 'Muscle 1:' errors class="control-label"}}
@@ -87,10 +89,7 @@
                 {{field_errors 'email' errors class="help-block text-error"}}
             </div>
         </div>
-<<<<<<< HEAD
-=======
 
->>>>>>> master
         <div class="control-group">
             {{label_validation 'food' 'Your favourite food' errors class="control-label"}}
             <div class="controls">
@@ -142,6 +141,10 @@
         </div> --}}
         {{/form}}
     </div>
+    <div class="col col-lg-1">
+        <button id="submit">Create Plan</button>
+    </div>
+
 </div>
 
 {{!--
@@ -218,8 +221,8 @@
     }(this, jQuery, Handlebars));
 </script>
 </body>
-<<<<<<< HEAD
-=======
 
->>>>>>> master
 </html> --}}
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="/js/index.js"></script>
