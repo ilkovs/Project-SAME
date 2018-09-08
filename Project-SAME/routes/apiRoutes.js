@@ -113,7 +113,7 @@ module.exports = function (app) {
     console.log(req);
     db.user.findOne({
       where: {
-        id: req.params.id
+        id: req.user.id
       }, 
       include: [{model: db.Plan,
         include: [{model: db.DailyWorkout, order: ['weekday']}]
