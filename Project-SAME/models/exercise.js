@@ -31,9 +31,5 @@ module.exports = function(sequelize, DataTypes) {
     };
   
     return Exercise;
-<<<<<<< HEAD
   };
   
-=======
-  };
->>>>>>> master
