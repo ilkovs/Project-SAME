@@ -186,7 +186,7 @@ module.exports = function (app) {
   app.get("/directory", function(req, res) {
     db.user.findOne({
       where: {
-      id: 7
+      id: req.user.id
     },
     include: [db.Plan]
   }).then((user) => {

@@ -28,7 +28,7 @@ module.exports = function (app) {
   app.get("/directory", function (req, res) {
     db.User.findOne({
       where: {
-        id: 1
+        id: req.user.id
       }
     }).then(function (user) {
       // db.Plan.findAll().then((plan) => {
