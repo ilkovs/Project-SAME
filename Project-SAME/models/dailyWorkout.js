@@ -3,13 +3,7 @@ module.exports = function(sequelize, DataTypes) {
       id: {
         autoIncrement: true,
         primaryKey: true,
-<<<<<<< HEAD
         type: DataTypes.INTEGER
-=======
-
-        type: DataTypes.INTEGER
-
->>>>>>> master
       },
       weekday: {
         type: DataTypes.INTEGER,

@@ -112,7 +112,6 @@ module.exports = function (app) {
       include: [db.DailyWorkout]
     }).then(function(dbPlan) {
       res.json(dbPlan);
-<<<<<<< HEAD
     });
   });
   
@@ -128,23 +127,6 @@ module.exports = function (app) {
     });
   });
   
-=======
-    });
-  });
-  
-  app.get("/api/users/:id", function(req, res) {
-    console.log(req);
-    db.User.findOne({
-      where: {
-        id: req.params.id
-      }, 
-      include: [db.Plan]
-    }).then(function(dbUser) {
-      res.json(dbUser)
-    });
-  });
-  
->>>>>>> master
 
   // app.get("/api/authors", function(req, res) {
   //   // Here we add an "include" property to our options in our findAll query
