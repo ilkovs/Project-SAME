@@ -1,10 +1,11 @@
-require("dotenv").config();
-var express = require("express");
-var bodyParser = require("body-parser");
-// var exphbs = require("express-handlebars");
-// var hbs = require('hbs');
-// require('handlebars-form-helpers').register(hbs.handlebars);
+var express    = require('express')
+var app        = express()
+//passport
+var passport   = require('passport')
+var session    = require('express-session')
 
+var bodyParser = require('body-parser')
+var env        = require('dotenv').load()
 var exphbs = require('express-handlebars'),
   handlebars = require('handlebars'),
   helpers = require('handlebars-form-helpers').register(handlebars);
@@ -17,17 +18,15 @@ var hbs = exphbs.create({
   defaultLayout: 'main'
 });
 
-var env = require('dotenv').load();
 
-//passport
-var passport = require("passport");
-var session = require("express-session");
 
+
+require("dotenv").config();
 
 var db = require("./models");
 
 
-var app = express();
+
 var PORT = process.env.PORT || 3000;
 
 
@@ -64,8 +63,15 @@ app.engine(
 app.set("view engine", "handlebars");
 
 // Routes
+
+var authRoute = require('./routes/auth.js')(app, passport);
+
 require("./routes/apiRoutes")(app);
 require("./routes/htmlRoutes")(app);
+
+
+//load passport strategies
+require('./config/passport/passport.js')(passport, db.user);
 
 var syncOptions = { force: false };
 

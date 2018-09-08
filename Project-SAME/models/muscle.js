@@ -1,10 +1,13 @@
+
 module.exports = function (sequelize, DataTypes) {
   var Muscle = sequelize.define("Muscle", {
+
     //   id: {
     //     autoIncrement: true,
     //     primaryKey: true,
     //     type: DataTypes.INTEGER
     //   },
+
     value: {
       type: DataTypes.STRING,
       allowNull: false,
@@ -23,19 +26,21 @@ module.exports = function (sequelize, DataTypes) {
       timestamps: false
     });
 
-  Muscle.associate = function (models) {
-    // We're saying that a Muscle should belong to an Author
-    // A Muscle can't be created without an Author due to the foreign key constraint
+    Muscle.associate = function(models) {
+      // We're saying that a Muscle should belong to an Author
+      // A Muscle can't be created without an Author due to the foreign key constraint
     //   Muscle.belongsTo(models.User, {
     //     foreignKey: {
     //       allowNull: false
     //     }
     //   });
-    Muscle.hasMany(models.Exercise, {
-      foreignKey: 'muscle',
-      onDelete: "cascade"
-    });
-  };
-
-  return Muscle;
-}
+      Muscle.hasMany(models.Exercise, {
+        foreignKey: 'muscle',
+        onDelete: "cascade"
+      });
+    };
+  
+    return Muscle;
+  }
+  
+  //added a Text column for form purposes

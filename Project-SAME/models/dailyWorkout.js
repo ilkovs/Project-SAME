@@ -3,9 +3,7 @@ module.exports = function(sequelize, DataTypes) {
       id: {
         autoIncrement: true,
         primaryKey: true,
-
         type: DataTypes.INTEGER
-
       },
       weekday: {
         type: DataTypes.INTEGER,
@@ -20,17 +18,17 @@ module.exports = function(sequelize, DataTypes) {
           len: [1]
       },
       muscleGroup1: {
-        type: DataTypes.TEXT,
+        type: DataTypes.STRING,
         allowNull: false,
         len: [1]
       },
       muscleGroup2: {
-        type: DataTypes.TEXT,
+        type: DataTypes.STRING,
         allowNull: true,
         len: [1]
       },
       muscleGroup3: {
-        type: DataTypes.TEXT,
+        type: DataTypes.STRING,
         allowNull: true,
         len: [1]
       },
