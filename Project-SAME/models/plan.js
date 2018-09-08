@@ -3,7 +3,7 @@ module.exports = function(sequelize, DataTypes) {
       id: {
         autoIncrement: true,
         primaryKey: true,
-        type: Sequelize.INTEGER
+        type: DataTypes.INTEGER
       },
       title: {
         type: DataTypes.STRING,
@@ -17,7 +17,7 @@ module.exports = function(sequelize, DataTypes) {
     Plan.associate = function(models) {
       // We're saying that a Plan should belong to an Author
       // A Plan can't be created without an Author due to the foreign key constraint
-      Plan.belongsTo(models.User, {
+      Plan.belongsTo(models.user, {
         foreignKey: {
           allowNull: false
         }
