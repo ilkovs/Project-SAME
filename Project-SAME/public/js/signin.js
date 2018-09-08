@@ -18,3 +18,11 @@
    });
    });
    });
+
+   $(".newUser").click(function() {
+    window.location.href = "/signup"
+   });
+
+   $(".alreadyUser").click(function() {
+    window.location.href = "/signin"
+   });

@@ -58,14 +58,14 @@
 //   });
 //  //create user
 //  app.post("/api/users", function(req, res) {
-//   db.User.create(req.body).then(function(data) {
+//   db.user.create(req.body).then(function(data) {
 //     res.json(data);
 //   });
 // });
 
 //  // Delete a user by id if we get to it
 //  app.delete("/api/users/:id", function(req, res) {
-//   db.User.destroy({ where: { id: req.params.id } }).then(function(data) {
+//   db.user.destroy({ where: { id: req.params.id } }).then(function(data) {
 //     res.json(data);
 //   });
 // });
@@ -88,7 +88,8 @@ module.exports = function (app) {
     // Here we add an "include" property to our options in our findAll query
     // We set the value to an array of the models we want to include in a left outer join
     // In this case, just db.Post
-    db.User.findAll({
+    db.user.findAll({
+      //probably shouldnt include this but hey
       include: [db.Plan]
     }).then(function(dbUser) {
       res.json(dbUser);
@@ -104,28 +105,94 @@ module.exports = function (app) {
     });
   });
 
+
+  //start of the stuff made after you fell asleep
+
+  //shows full cascading structure
+  app.get("/api/users/:id", function(req, res) {
+    console.log(req);
+    db.user.findOne({
+      where: {
+        id: req.params.id
+      }, 
+      include: [{model: db.Plan,
+        include: [{model: db.DailyWorkout, order: ['weekday']}]
+      
+    }]}).then(function(dbUser) {
+      res.json(dbUser)
+    });
+  });
+
+//shows all associated exercises for a muscle group
+  app.get("/api/exercises/:muscle", function(req, res) {
+    // Here we add an "include" property to our options in our findAll query
+    // We set the value to an array of the models we want to include in a left outer join
+    // In this case, just db.Post
+    db.Muscle.findAll({
+      where: {
+        muscle: req.params.muscle
+      },
+      include: [db.Exercise]
+    }).then(function(dbMuscle) {
+      res.json(dbMuscle);
+    });
+  });
+
+  //shows daily workouts of specified plan change params to session id
+  //probably should skip the include and just grab the dailyworkouts directly?
+  app.get("/api/plans/:id", function(req, res) {
+    // Here we add an "include" property to our options in our findAll query
+    // We set the value to an array of the models we want to include in a left outer join
+    // In this case, just db.Post
+    db.Plan.findAll({
+      where: {
+        id: req.params.id
+      },
+      include: [db.DailyWorkout]
+    }).then(function(dbPlan) {
+      res.json(dbPlan);
+    });
+  });
+
+  //finds all of users plans and their associated dailyworkouts
   app.get("/api/plans", function(req, res) {
     // Here we add an "include" property to our options in our findAll query
     // We set the value to an array of the models we want to include in a left outer join
     // In this case, just db.Post
     db.Plan.findAll({
+      where: {
+        UserId: req.user.id
+      },
       include: [db.DailyWorkout]
     }).then(function(dbPlan) {
       res.json(dbPlan);
     });
   });
   
-  app.get("/api/users/:id", function(req, res) {
-    console.log(req);
-    db.User.findOne({
+  // app.get("/directory", function(req, res) {
+  //   db.user.findOne({
+  //     where: {
+  //     id: 7
+  //   }, 
+  //   include: [{model: db.Plan,
+  //     include: [db.DailyWorkout]}]
+    
+  // }).then(function(dbUser) {
+  //   res.json(dbUser)
+  // });
+
+  // });
+
+  app.get("/directory", function(req, res) {
+    db.user.findOne({
       where: {
-        id: req.params.id
-      }, 
-      include: [db.Plan]
-    }).then(function(dbUser) {
-      res.json(dbUser)
-    });
+      id: 7
+    },
+    include: [db.Plan]
+  }).then((user) => {
+    res.render('directory', { user })});
   });
+
   
 
   // app.get("/api/authors", function(req, res) {

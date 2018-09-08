@@ -6,15 +6,25 @@ module.exports = function(app) {
   // Load index page
   app.get("/", function(req, res) {
       res.render("index", {
-        msg: "Welcome!",
+        msg: req.user.id,
         // examples: dbExamples
         examples: ""
       });
 
   });
+//not complete
+  app.get("/viewPlan/:id", function(req, res) {
+    db.Plan.findOne({where: {
+      id: req.params.id
+    }, include: [db.DailyWorkout]
+  }).then(function(plan) {
+    // db.Plan.findAll().then((plan) => {
+    res.render('viewPlan', { plan })});
+    // console.log("thes are the plans", plan);
+  });
 
-  app.get("/directory", function(req, res) {
-    db.User.findOne({where: {
+  app.get("/:plan", function(req, res) {
+    db.user.findOne({where: {
       id: 1
     }}).then(function(user) {
     // db.Plan.findAll().then((plan) => {

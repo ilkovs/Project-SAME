@@ -5,10 +5,17 @@
   <div class="col col-lg-1"></div>
   <div class="col col-lg-4">
     <a href="/makeplan" class="button">Create Plan</a>
-    <ul>
-      {{#each plan}} 
-        <h1>{{this.title}}</h1>
-      {{/each}}
-    </ul>
   </div>
+  
 </div>
+<div class="row">
+    <div class="col col-lg-1"></div>
+    <div class="col col-lg-4">
+      <ul>
+        {{#each user.Plans}} 
+          <h1>{{this.title}}</h1>
+        {{/each}}
+      </ul>
+    </div>
+</div>
+

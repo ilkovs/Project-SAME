@@ -2,7 +2,7 @@
      <img src="/images/pic.png">
 
    </div>
-   <div id="container">
+   <div id="container" class="signInContainer">
      <h2>Member Log In</h2>
      <span class="close-btn">
        <img src="https://cdn4.iconfinder.com/data/icons/miu/22/circle_close_delete_-128.png">
@@ -24,7 +24,8 @@
    <div id="remember-container">
      {{!-- <input type="checkbox" id="checkbox-2-1" class="checkbox" checked="checked"/> --}}
      {{!-- <span id="remember">Remember me</span> --}}
-     <span id="forgotten">New User</span>
+     <span class="newUser" id="forgotten">New User</span>
+     {{!-- <a id="forgotten" class="orange-btn" href="/signup" target="_blank">NewUser</a> --}}
    </div>
  </form>
 </div>
@@ -38,7 +39,7 @@
    <input type="email" name="email" placeholder="E-mail">
    <a href="#" class="orange-btn">Get new password</a>
  </form>
-
+{{!-- delete this forgot password garbage --}}
 </div>
 
 <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
