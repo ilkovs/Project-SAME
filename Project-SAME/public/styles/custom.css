@@ -40,13 +40,21 @@ html {
     bottom: 0;
     margin: auto;
     width: 260px;
-    height: 260px;
+    /* height: 260px; */
     border-radius: 5px;
     background: rgba(3,3,3,0.25);
     box-shadow: 1px 1px 50px #000;
     display: none;
   }
   
+  .signInContainer{
+    height: 260px;
+  }
+
+  .signUpContainer{
+    height: 390px;
+  }
+
   .close-btn{
     position: absolute;
     cursor: pointer;
@@ -94,7 +102,7 @@ html {
     margin: 9px auto;
     font-size: 17px;
     color: #fff;
-    padding: 8px;
+    padding: 10px;
     border-radius: 6px;
     border: none;
     background: rgba(3,3,3,.1);

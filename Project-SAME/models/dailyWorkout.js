@@ -44,9 +44,9 @@ module.exports = function(sequelize, DataTypes) {
           allowNull: false
         }
       });
-      DailyWorkout.hasMany(models.Exercise, {
-        onDelete: "cascade"
-    });
+      // DailyWorkout.hasMany(models.Exercise, {
+      //   onDelete: "cascade"
+    // });
       //if we make an exercise table instead of string array
     //   DailyWorkout.hasMany(models.DailyWorkout, {
     //     onDelete: "cascade"

@@ -4,11 +4,21 @@
 
   <div class="col col-lg-1"></div>
   <div class="col col-lg-4">
-    <a href="/makeplan" class="button">Create Plan</a>
-    <ul>
-      {{#each plan}} 
-        <h1>{{this.title}}</h1>
-      {{/each}}
-    </ul>
+    {{!-- <a href="/makeplan" class="button">Create Plan</a> --}}
+     <button class="makePlan" >Create Plan</button>
   </div>
+  
 </div>
+<div class="row">
+    <div class="col col-lg-1"></div>
+    <div class="col col-lg-4">
+      <ul>
+        {{#each user.Plans}} 
+          <div><button class="planbtn" plan={{this.id}}>{{this.title}}</button></div>
+        {{/each}}
+      </ul>
+    </div>
+</div>
+
+
+<script src="/js/makeplanbutton.js"></script>

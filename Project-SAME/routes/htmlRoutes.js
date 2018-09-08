@@ -4,6 +4,7 @@ var db = require("../models");
 
 module.exports = function (app) {
   // Load index page
+
   app.get("/", function (req, res) {
     res.render("index", {
       msg: "Welcome!",
@@ -12,6 +13,17 @@ module.exports = function (app) {
     });
 
   });
+//not complete
+  app.get("/viewPlan/:id", function(req, res) {
+    db.Plan.findOne({where: {
+      id: req.params.id
+    }, include: [db.DailyWorkout]
+  }).then(function(plan) {
+    // db.Plan.findAll().then((plan) => {
+    res.render('viewPlan', { plan })});
+    // console.log("thes are the plans", plan);
+  });
+
 
   app.get("/directory", function (req, res) {
     db.User.findOne({
@@ -22,6 +34,7 @@ module.exports = function (app) {
       // db.Plan.findAll().then((plan) => {
       res.render('directory', { user })
     });
+
     // console.log("thes are the plans", plan);
   });
 
