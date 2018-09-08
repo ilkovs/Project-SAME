@@ -21,7 +21,24 @@ module.exports = function(app) {
   });
 
   app.get("/makeplan", function(req, res) {
-    res.render('makeplan');
+    db.Muscle.findAll().then(function(muscles, weekday) {
+    // db.Plan.findAll().then((plan) => {
+    res.render('makeplan', { muscles, weekday: [{
+      value: 1,
+      text: 1
+  }, {
+      value: 2,
+      text: 2
+  }, {
+      value: 3,
+      text: 3
+  }, {
+      value: 4,
+      text: 4
+  }, {
+      value: 5,
+      text: 5
+  }] })});
   });
 
     // res.render("directory");

@@ -9,3 +9,22 @@ INSERT INTO plans (title, UserId) VALUES ('My weekend workout', 1);
 INSERT INTO plans (title, UserId) VALUES ('Weekday workout', 3);
 INSERT INTO plans (title, UserId) VALUES ('Mission impossible', 2);
 INSERT INTO plans (title, UserId) VALUES ('My weekend workout 2', 1);
+
+
+-- INSERT INTO muscles (group_name) VALUES ('abdominals');
+-- INSERT INTO muscles (group_name) VALUES ('abductors');
+-- INSERT INTO muscles (group_name) VALUES ('adductors');
+-- INSERT INTO muscles (group_name) VALUES ('biceps');
+-- INSERT INTO muscles (group_name) VALUES ('calves');
+-- INSERT INTO muscles (group_name) VALUES ('chest');
+-- INSERT INTO muscles (group_name) VALUES ('forearms');
+-- INSERT INTO muscles (group_name) VALUES ('glutes');
+-- INSERT INTO muscles (group_name) VALUES ('hamstrings');
+-- INSERT INTO muscles (group_name) VALUES ('lats');
+-- INSERT INTO muscles (group_name) VALUES ('lower back');
+-- INSERT INTO muscles (group_name) VALUES ('middle back');
+-- INSERT INTO muscles (group_name) VALUES ('neck');
+-- INSERT INTO muscles (group_name) VALUES ('quadriceps');
+-- INSERT INTO muscles (group_name) VALUES ('shoulders');
+-- INSERT INTO muscles (group_name) VALUES ('traps');
+-- INSERT INTO muscles (group_name) VALUES ('triceps');
