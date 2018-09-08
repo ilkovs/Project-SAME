@@ -1,13 +1,6 @@
 module.exports = function(sequelize, DataTypes) {
     var Muscle = sequelize.define("Muscle", {
-      id: {
-        autoIncrement: true,
-        primaryKey: true,
-
-        type: DataTypes.INTEGER
-
-      },
-      group: {
+      group_name: {
         type: DataTypes.STRING,
         allowNull: false,
         validate: {
