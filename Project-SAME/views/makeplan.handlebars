@@ -3,6 +3,9 @@
 
     <div class="col col-lg-1"></div>
     <div class="col col-lg-4">
+        {{!-- {{#each muscles}}
+        <h1>{{this.Text}}</h1>
+        {{/each}} --}}
         {{#unless submitted}}
         <div class="alert alert-info">Build your plan below.</div>
         {{/unless}}
@@ -32,19 +35,44 @@
             </div>
         </div>
         <div class="control-group">
-            {{label_validation 'weekday' 'Workout days:' errors class="control-label"}}
+            {{label_validation 'weekday' 'How many days in a week would you like to work out?' errors
+            class="control-label"}}
             <div class="controls">
                 {{select_validation 'weekday' weekday plan.weekday errors}}
                 {{field_errors 'weekday' errors class="help-block text-error"}}
             </div>
         </div>
         <div class="control-group">
+            {{label_validation 'muscles' 'Muscle 1' errors class="control-label"}}
+            <div class="controls">
+                {{select_validation 'muscles1' muscles plan.muscles errors multiple="multiple"}}
+                {{field_errors 'muscle' errors class="help-block text-error"}}
+            </div>
+        </div>
+        <div class="control-group">
+            {{label_validation 'muscles' 'Muscle 2' errors class="control-label"}}
+            <div class="controls">
+                {{select_validation 'muscle2' muscles plan.muscles errors multiple="multiple"}}
+                {{field_errors 'muscle' errors class="help-block text-error"}}
+            </div>
+        </div>
+
+        <div class="control-group">
+            {{label_validation 'muscles' 'Muscle 3' errors class="control-label"}}
+            <div class="controls">
+                {{select_validation 'muscle3' muscles plan.muscles errors multiple="multiple"}}
+                {{field_errors 'muscle' errors class="help-block text-error"}}
+            </div>
+        </div>
+          <button type="submit">Create Plan</button>
+
+        {{!-- <div class="control-group">
             {{label_validation 'muscles' 'Muscle 1:' errors class="control-label"}}
             <div class="controls">
                 {{select_validation 'muscles' muscles plan.muscle errors}}
                 {{field_errors 'muscles' errors class="help-block text-error"}}
             </div>
-        </div>
+        </div> --}}
         {{!-- <div class="control-group">
             {{label_validation 'surname' 'Enter your surname' errors class="control-label"}}
             <div class="controls">
