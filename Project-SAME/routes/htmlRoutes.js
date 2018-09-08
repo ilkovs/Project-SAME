@@ -2,14 +2,15 @@
 
 var db = require("../models");
 
-module.exports = function(app) {
+module.exports = function (app) {
   // Load index page
-  app.get("/", function(req, res) {
-      res.render("index", {
-        msg: req.user.id,
-        // examples: dbExamples
-        examples: ""
-      });
+
+  app.get("/", function (req, res) {
+    res.render("index", {
+      msg: "Welcome!",
+      // examples: dbExamples
+      examples: ""
+    });
 
   });
 //not complete
@@ -23,40 +24,54 @@ module.exports = function(app) {
     // console.log("thes are the plans", plan);
   });
 
-  app.get("/:plan", function(req, res) {
-    db.user.findOne({where: {
-      id: 1
-    }}).then(function(user) {
-    // db.Plan.findAll().then((plan) => {
-    res.render('directory', { user })});
+
+  app.get("/directory", function (req, res) {
+    db.User.findOne({
+      where: {
+        id: 1
+      }
+    }).then(function (user) {
+      // db.Plan.findAll().then((plan) => {
+      res.render('directory', { user })
+    });
+
     // console.log("thes are the plans", plan);
   });
 
-  app.get("/makeplan", function(req, res) {
-    db.Muscle.findAll().then(function(muscles, weekday) {
-    // db.Plan.findAll().then((plan) => {
-    res.render('makeplan', { muscles, weekday: [{
-      value: 1,
-      text: 1
-  }, {
-      value: 2,
-      text: 2
-  }, {
-      value: 3,
-      text: 3
-  }, {
-      value: 4,
-      text: 4
-  }, {
-      value: 5,
-      text: 5
-  }] })});
+  app.get("/makeplan", function (req, res) {
+    db.Muscle.findAll().then(function (muscles, weekday) {
+      // db.Plan.findAll().then((plan) => {
+      res.render('makeplan', {
+        muscles, weekday: [{
+          value: 1,
+          text: 1
+        }, {
+          value: 2,
+          text: 2
+        }, {
+          value: 3,
+          text: 3
+        }, {
+          value: 4,
+          text: 4
+        }, {
+          value: 5,
+          text: 5
+        }, {
+          value: 6,
+          text: 6
+        }, {
+          value: 7,
+          text: 7
+        }]
+      })
+    });
   });
 
-    // res.render("directory");
+  // res.render("directory");
   // });
 
-  
+
 
   // // Load example page and pass in an example by id
   // app.get("/example/:id", function(req, res) {

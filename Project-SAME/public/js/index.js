@@ -1,5 +1,9 @@
 // Get references to page elements
-var $exampleText = $("#example-text");
+var $muscle1 = $("#muscle1");
+var $muscle2 = $("#muscle2");
+var $muscle3 = $("#muscle3");
+var $weekday = $("#weekday");
+var $planname = $
 var $exampleDescription = $("#example-description");
 var $submitBtn = $("#submit");
 var $exampleList = $("#example-list");
@@ -64,13 +68,16 @@ var refreshExamples = function() {
 var handleFormSubmit = function(event) {
   event.preventDefault();
 
-  var example = {
-    text: $exampleText.val().trim(),
-    description: $exampleDescription.val().trim()
+  var userInput = {
+    muscle1: $muscle1.val().trim(),
+    muscle2: $muscle2.val().trim(),
+    muscle3: $muscle3.val().trim(),
+    weekday: $weekday.val().trim(),
+    planname: $planname.val().trim()
   };
 
-  if (!(example.text && example.description)) {
-    alert("You must enter an example text and description!");
+  if (!(userInput.muscle1 || userInput.weekday || userInput.planname)) {
+    alert("You must enter a Plan Name, Number of Days and at least 1 muscle!");
     return;
   }
 
@@ -78,7 +85,7 @@ var handleFormSubmit = function(event) {
     refreshExamples();
   });
 
-  $exampleText.val("");
+  $muscle1.val("");
   $exampleDescription.val("");
 };
 
