@@ -3,7 +3,13 @@ module.exports = function(sequelize, DataTypes) {
       id: {
         autoIncrement: true,
         primaryKey: true,
+<<<<<<< HEAD
         type: DataTypes.INTEGER
+=======
+
+        type: DataTypes.INTEGER
+
+>>>>>>> master
       },
       weekday: {
         type: DataTypes.INTEGER,
@@ -35,13 +41,18 @@ module.exports = function(sequelize, DataTypes) {
     });
   
     DailyWorkout.associate = function(models) {
-      // We're saying that a DailyWorkout should belong to an Author
-      // A DailyWorkout can't be created without an Author due to the foreign key constraint
+
+      // We're saying that a DailyWorkout should belong to a Plan
+      // A DailyWorkout can't be created without an Plan due to the foreign key constraint
+
       DailyWorkout.belongsTo(models.Plan, {
         foreignKey: {
           allowNull: false
         }
       });
+      DailyWorkout.hasMany(models.Exercise, {
+        onDelete: "cascade"
+    });
       //if we make an exercise table instead of string array
     //   DailyWorkout.hasMany(models.DailyWorkout, {
     //     onDelete: "cascade"
@@ -50,4 +61,4 @@ module.exports = function(sequelize, DataTypes) {
   
     return DailyWorkout;
   };
-  
+
