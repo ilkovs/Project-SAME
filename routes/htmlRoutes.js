@@ -5,14 +5,14 @@ var db = require("../models");
 module.exports = function (app) {
   // Load index page
 
-  // app.get("/", function (req, res) {
-  //   res.render("index", {
-  //     msg: "Welcome!",
-  //     // examples: dbExamples
-  //     examples: ""
-  //   });
+  app.get("/", function (req, res) {
+    res.render("index", {
+      msg: "Welcome!",
+      // examples: dbExamples
+      examples: ""
+    });
 
-  // });
+  });
 //not complete
   app.get("/viewPlan/:id", function(req, res) {
     db.Plan.findOne({where: {
