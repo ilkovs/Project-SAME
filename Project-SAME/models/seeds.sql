@@ -10,6 +10,10 @@ INSERT INTO plans (title, UserId) VALUES ('Weekday workout', 3);
 INSERT INTO plans (title, UserId) VALUES ('Mission impossible', 2);
 INSERT INTO plans (title, UserId) VALUES ('My weekend workout 2', 1);
 
+INSERT INTO plans (title, UserId) VALUES ('My weekend workout', 1);
+INSERT INTO plans (title, UserId) VALUES ('Weekday workout', 1);
+INSERT INTO dailyworkouts (id,weekday,lifts,muscleGroup1,muscleGroup2,PlanId) VALUES (1,1,"dip machine,dips - triceps version,dips - chest version,dumbbell flyes","triceps", "chest",1);
+INSERT INTO dailyworkouts (id,weekday,lifts,muscleGroup1,muscleGroup2,PlanId) VALUES (2,2,"dip machine,dips - triceps version,dips - chest version,dumbbell flyes,drop push","triceps", "chest",1);
 
 -- INSERT INTO muscles (group_name) VALUES ('abdominals');
 -- INSERT INTO muscles (group_name) VALUES ('abductors');
