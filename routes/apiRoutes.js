@@ -130,7 +130,7 @@ module.exports = function (app) {
     // In this case, just db.Post
     db.Muscle.findAll({
       where: {
-        muscle: req.params.muscle
+        value: req.params.muscle
       },
       include: [db.Exercise]
     }).then(function(dbMuscle) {
