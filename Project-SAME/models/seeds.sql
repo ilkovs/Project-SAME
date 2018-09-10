@@ -29,8 +29,8 @@ INSERT INTO plans (title, UserId) VALUES ('My weekend workout 2', 1);
 -- INSERT INTO muscles (group_name) VALUES ('traps');
 -- INSERT INTO muscles (group_name) VALUES ('triceps');
 
-INSERT INTO users (id, firstname, lastname, password, last_login) VALUES (7,'Ron', 'Weasley', 'gryffindor88', '08/10/2018');
-INSERT INTO plans (title, UserId) VALUES ('My weekend workout', 7);
-INSERT INTO plans (title, UserId) VALUES ('Weekday workout', 7);
+-- INSERT INTO users (id, firstname, lastname, password, last_login) VALUES (7,'Ron', 'Weasley', 'gryffindor88', '08/10/2018');
+INSERT INTO plans (title, UserId) VALUES ('My weekend workout', 1);
+INSERT INTO plans (title, UserId) VALUES ('Weekday workout', 1);
 INSERT INTO dailyworkouts (id,weekday,lifts,muscleGroup1,muscleGroup2,PlanId) VALUES (1,1,"dip machine,dips - triceps version,dips - chest version,dumbbell flyes","triceps", "chest",1);
 INSERT INTO dailyworkouts (id,weekday,lifts,muscleGroup1,muscleGroup2,PlanId) VALUES (2,2,"dip machine,dips - triceps version,dips - chest version,dumbbell flyes,drop push","triceps", "chest",1);

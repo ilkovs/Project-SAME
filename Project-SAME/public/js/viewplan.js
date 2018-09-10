@@ -1,0 +1,2 @@
+$(".lifts").click(function() {
+

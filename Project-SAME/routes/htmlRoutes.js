@@ -19,10 +19,21 @@ module.exports = function (app) {
       id: req.params.id
     }, include: [db.DailyWorkout]
   }).then(function(plan) {
+    console.log(plan);
     // db.Plan.findAll().then((plan) => {
     res.render('viewPlan', { plan })});
     // console.log("thes are the plans", plan);
   });
+  app.get("/viewPlan/", function(req, res) {
+  db.Plan.findOne({where: {
+    id: 5
+  }, include: [db.DailyWorkout]
+}).then(function(plan) {
+  console.log(plan);
+  // db.Plan.findAll().then((plan) => {
+  res.render('viewPlan', { plan })});
+  // console.log("thes are the plans", plan);
+});
 
 
   app.get("/directory", function (req, res) {
