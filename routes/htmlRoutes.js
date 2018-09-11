@@ -6,11 +6,12 @@ module.exports = function (app) {
   // Load index page
 
   app.get("/", function (req, res) {
-    res.render("index", {
-      msg: "Welcome!",
-      // examples: dbExamples
-      examples: ""
-    });
+    res.redirect('/signin');
+    // res.render("index", {
+    //   msg: "Welcome!",
+    //   // examples: dbExamples
+    //   examples: ""
+    // });
 
   });
 //not complete

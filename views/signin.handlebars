@@ -1,26 +1,22 @@
-
-
-    <div id="login-button">
+   <div id="login-button">
      <img src="/images/pic.png">
 
    </div>
-   <div id="container" class="signUpContainer">
-     <h2>Sign Up</h2>
+   <div id="container" class="signInContainer">
+     <h2>Member Log In</h2>
      <span class="close-btn">
        <img src="https://cdn4.iconfinder.com/data/icons/miu/22/circle_close_delete_-128.png">
      </span>
 
- <form id="signup" name="signup" method="post" action="/signup">
+ <form id="signin" name="signin" method="post" action="signin">
    
     {{!-- <label for="username">Username</label> --}}
     <input name="username" type="text" placeholder="Username"/>
-    <input name="firstname" type="text" placeholder="First Name"/>
-    <input name="lastname" type="text" placeholder="Last Name"/>
     {{!-- <label for="email">Email Address</label> --}}
     {{!-- <input class="text" name="email" type="text" /> --}}
     {{!-- <label for="password">Password</label> --}}
     <input name="password" type="password" placeholder="Password"/>
-    <input class="btn" type="submit" value="Sign Up" />
+    <input class="btn" type="submit" value="Sign In" />
 
    {{!-- <input type="email" name="email" placeholder="Username">
    <input type="password" name="pass" placeholder="Password"> --}}
@@ -28,14 +24,12 @@
    <div id="remember-container">
      {{!-- <input type="checkbox" id="checkbox-2-1" class="checkbox" checked="checked"/> --}}
      {{!-- <span id="remember">Remember me</span> --}}
-
-    <span class="alreadyUser" id="forgotten">Already a member?</span>
-
-     {{!-- <a id="forgotten" class="orange-btn" href="/signin" target="_blank">Already a Member?</a> --}}
+     <span class="newUser" id="forgotten">New User</span>
+     {{!-- <a id="forgotten" class="orange-btn" href="/signup" target="_blank">NewUser</a> --}}
    </div>
  </form>
 </div>
-<div id="forgotten-container">
+{{!-- <div id="forgotten-container">
  <h1>Forgotten</h1>
  <span class="close-btn">
    <img src="https://cdn4.iconfinder.com/data/icons/miu/22/circle_close_delete_-128.png">
@@ -45,8 +39,8 @@
    <input type="email" name="email" placeholder="E-mail">
    <a href="#" class="orange-btn">Get new password</a>
  </form>
-{{!-- delete this forgot password garbage --}}
-</div>
+
+</div> --}}
 
 <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
 <script src="http://code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
